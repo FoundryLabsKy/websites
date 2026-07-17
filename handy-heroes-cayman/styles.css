@@ -667,3 +667,102 @@ a { color: var(--blue-mid); }
   html { scroll-behavior: auto; }
   .btn { transition: none; }
 }
+
+/* ---------- Skip link ---------- */
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 100;
+  background: var(--navy-deep);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0 0 10px 10px;
+  text-decoration: none;
+  transition: top 150ms ease;
+}
+.skip-link:focus { top: 0; }
+
+/* ---------- How it works strip ---------- */
+
+.steps {
+  counter-reset: step;
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1.1rem;
+}
+.step {
+  counter-increment: step;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.3rem 1.3rem 4.2rem;
+  position: relative;
+  box-shadow: var(--shadow-soft);
+}
+.step::before {
+  content: counter(step);
+  position: absolute;
+  left: 1.1rem;
+  top: 1.2rem;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--amber);
+  color: var(--navy-deep);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+.step h3 { margin-bottom: 0.25rem; font-size: 1.05rem; }
+.step p { margin: 0; color: var(--ink-soft); font-size: 0.97rem; }
+
+@media (min-width: 960px) {
+  .steps { grid-template-columns: repeat(4, 1fr); }
+  .step { padding: 3.6rem 1.3rem 1.3rem; }
+  .step::before { left: 1.3rem; top: 1.2rem; }
+}
+
+/* ---------- FAQ ---------- */
+
+.faq { display: grid; gap: 0.8rem; margin-top: 1.8rem; }
+.faq details {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.3rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--navy);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+";
+  flex: none;
+  font-size: 1.4rem;
+  color: var(--amber-deep);
+  line-height: 1;
+}
+.faq details[open] summary::after { content: "–"; }
+.faq details > p {
+  margin: 0;
+  padding: 0 1.3rem 1.2rem;
+  color: var(--ink-soft);
+}
