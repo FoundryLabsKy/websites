@@ -1,33 +1,29 @@
-name: Deploy to GitHub Pages
+name: Publish to GitHub Pages
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+# Pages is published from the gh-pages branch (creating that branch
+# auto-enables Pages for the repo — the default GITHUB_TOKEN is not
+# allowed to enable Pages via the API, so the actions/deploy-pages
+# flow can't do first-time setup). This job just mirrors main to
+# gh-pages; .nojekyll makes Pages serve the files verbatim.
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  publish:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-        with:
-          enablement: true
-      # Sites are plain static files; the repo root is the site root.
-      # (.git and .github are excluded by the artifact action.)
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Mirror main to gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B gh-pages
+          git push -f origin gh-pages
