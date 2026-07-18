@@ -13,6 +13,7 @@ Each top-level directory is one client's static site, live at
 | `a1-plumbing-services/` | A1 Plumbing Services — plumbing, Grand Cayman | https://foundrylabsky.github.io/websites/a1-plumbing-services/ |
 | `handy-heroes-cayman/` | Handy Heroes Cayman — handyman & home repairs, Grand Cayman | https://foundrylabsky.github.io/websites/handy-heroes-cayman/ |
 | `professional-mowing-service/` | Professional Mowing Service — lawn care, Grand Cayman | https://foundrylabsky.github.io/websites/professional-mowing-service/ |
+| `rankins-jerk-pit/` | Rankin's Jerk Pit — jerk restaurant, Bodden Town | https://foundrylabsky.github.io/websites/rankins-jerk-pit/ |
 | `rodneys-salon/` | Rodney's Salon and Barber — salon & barber, George Town | https://foundrylabsky.github.io/websites/rodneys-salon/ |
 
 ## Adding a site
