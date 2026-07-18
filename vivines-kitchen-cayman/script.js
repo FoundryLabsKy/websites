@@ -34,6 +34,48 @@
   var todayRow = document.querySelector('#hours tr[data-day="' + new Date().getDay() + '"]');
   if (todayRow) todayRow.classList.add('is-today');
 
+  /* ---- Live open / closed status (from the published hours) ----
+     Hours are informal ("to confirm"), so the label always nudges to call. */
+  var SCHEDULE = { 0: [11, 16], 3: [11, 16], 4: [11, 16], 5: [11, 16], 6: [11, 16] }; // Sun, Wed–Sat
+  var DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  function openStatus() {
+    var now = new Date();
+    var d = now.getDay();
+    var h = now.getHours() + now.getMinutes() / 60;
+    var today = SCHEDULE[d];
+    if (today && h >= today[0] && h < today[1]) return { state: 'open', label: 'Open now · call ahead' };
+    if (today && h < today[0]) return { state: 'closed', label: 'Opens today at 11am' };
+    for (var i = 1; i <= 7; i++) {
+      var nd = (d + i) % 7;
+      if (SCHEDULE[nd]) {
+        return { state: 'closed', label: 'Closed · opens ' + (i === 1 ? 'tomorrow' : DAY_NAMES[nd]) + ' 11am' };
+      }
+    }
+    return { state: 'closed', label: 'Closed' };
+  }
+  var statusEls = document.querySelectorAll('[data-open-status]');
+  if (statusEls.length) {
+    var st = openStatus();
+    statusEls.forEach(function (el) {
+      el.dataset.state = st.state;
+      el.innerHTML = '<span class="dot" aria-hidden="true"></span><span>' + st.label + '</span>';
+      el.hidden = false;
+    });
+  }
+
+  /* ---- Sticky mobile call bar (phone-first business; CSS shows it only < 720px) ---- */
+  if (!document.querySelector('.sticky-cta')) {
+    var bar = document.createElement('div');
+    bar.className = 'sticky-cta';
+    bar.setAttribute('aria-label', 'Quick actions');
+    bar.innerHTML =
+      '<a class="btn btn--accent" href="tel:+13459477435">' +
+      '<svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg>Call to order</a>' +
+      '<a class="btn btn--ghost" href="https://wa.me/13459477435" target="_blank" rel="noopener">' +
+      '<svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>';
+    document.body.appendChild(bar);
+  }
+
   /* ---- Reveal-on-scroll: draws the signature chalk underline in ---- */
   var reveals = document.querySelectorAll('[data-reveal], .reveal');
   if (reduceMotion || !('IntersectionObserver' in window)) {

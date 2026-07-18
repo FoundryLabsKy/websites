@@ -482,6 +482,37 @@ ul,ol{margin:0 0 var(--sp-sm);padding-left:1.2em}
 }
 html{scroll-behavior:smooth}
 
+/* Live open/closed status pill */
+.status-pill{display:inline-flex;align-items:center;gap:.55rem;font-weight:700;
+  font-size:var(--fs-sm);padding:.4rem .9rem;border-radius:var(--r-pill);border:1px solid;
+  line-height:1;margin-bottom:var(--sp-md)}
+.status-pill .dot{width:.6rem;height:.6rem;border-radius:50%;flex:none;position:relative}
+.status-pill[data-state="open"]{background:var(--success-bg);color:#1c5540;border-color:#bcdfcd}
+.status-pill[data-state="open"] .dot{background:var(--success)}
+.status-pill[data-state="closed"]{background:var(--sand-100);color:var(--ink-700);border-color:var(--sand-300)}
+.status-pill[data-state="closed"] .dot{background:var(--ink-500)}
+.status-pill[data-state="open"] .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;
+  border:2px solid var(--success);opacity:.6;animation:status-pulse 2.2s var(--ease) infinite}
+@keyframes status-pulse{from{transform:scale(.5);opacity:.6}to{transform:scale(1.7);opacity:0}}
+.info-card .status-pill{margin:0 0 var(--sp-sm)}
+@media (prefers-reduced-motion:reduce){.status-pill .dot::after{display:none}}
+
+/* Sticky mobile call bar (shown only on small screens) */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;gap:.6rem;padding:.6rem;
+  background:rgba(250,246,239,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(30,20,8,.12)}
+.sticky-cta .btn{flex:1;padding-inline:.5rem}
+@media (max-width:720px){
+  .sticky-cta{display:flex}
+  body{padding-bottom:4.75rem}
+}
+
+/* Wave divider — the hero's sand crests over the top of the dark band */
+.band{position:relative}
+.band-wave{position:absolute;left:0;top:-1px;width:100%;height:clamp(28px,5vw,60px);
+  display:block;pointer-events:none;color:var(--bg)}
+.band .wrap{position:relative;z-index:1}
+
 /* Chips row */
 .chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:var(--sp-md) 0 0}
 .chips li{display:inline-flex;align-items:center;gap:.4rem;background:var(--sand-100);
