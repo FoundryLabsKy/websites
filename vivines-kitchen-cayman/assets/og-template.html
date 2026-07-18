@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="fonts.css">
+<style>
+  *{margin:0;box-sizing:border-box}
+  body{width:1200px;height:630px;overflow:hidden;font-family:'Source Sans 3',sans-serif;
+    background:radial-gradient(120% 100% at 100% 0%, #16302e, transparent 55%),
+      linear-gradient(150deg,#0e3b3b,#0a2a2a);color:#eaf1ec;position:relative}
+  .pad{padding:72px 80px;height:100%;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:2}
+  .top{display:flex;align-items:center;gap:20px}
+  .mark{width:92px;height:92px}
+  .brand{font-family:'Fraunces',serif;font-weight:700;font-size:40px;line-height:1;color:#fff}
+  .brand small{display:block;font-family:'Caveat',cursive;font-size:30px;color:#70b5b2;font-weight:700;margin-top:6px}
+  h1{font-family:'Fraunces',serif;font-weight:600;font-size:82px;line-height:1.02;color:#fff;max-width:20ch;letter-spacing:-0.5px}
+  h1 em{font-style:normal;color:#f6b26b}
+  .chalk{font-family:'Caveat',cursive;font-size:44px;color:#f6b26b;font-weight:700;margin-bottom:14px}
+  .foot{display:flex;gap:28px;align-items:center;font-size:28px;font-weight:600;color:#b7c6bd}
+  .foot span{display:inline-flex;align-items:center;gap:12px}
+  .foot .dot{width:8px;height:8px;border-radius:50%;background:#e8791f}
+  .waves{position:absolute;left:0;right:0;bottom:0;z-index:1;opacity:.5}
+</style>
+</head>
+<body>
+  <svg class="waves" viewBox="0 0 1200 160" fill="none" stroke="#1f8a8c" stroke-width="3" stroke-linecap="round">
+    <path d="M0 60c80-20 140 6 220 0s140-24 220 0 140 20 220 0 140-24 220 0 140 20 260 0" opacity=".7"/>
+    <path d="M0 100c80-20 140 6 220 0s140-24 220 0 140 20 220 0 140-24 220 0 140 20 260 0" opacity=".45"/>
+    <path d="M0 138c80-16 140 6 220 0s140-20 220 0 140 16 220 0 140-20 220 0 140 16 260 0" opacity=".3"/>
+  </svg>
+  <div class="pad">
+    <div class="top">
+      <svg class="mark" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="23" fill="#0e3b3b" stroke="#1f8a8c" stroke-width="1.5"/>
+        <path d="M6 30c6-7 12-9 18-6" fill="none" stroke="#3f9491" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M20 22c5-6 13-7 20-4 0 5-3 9-8 11-4 1.6-9 1-12-2Z" fill="#e8791f"/>
+        <circle cx="33" cy="20.5" r="1.2" fill="#0e3b3b"/>
+      </svg>
+      <div class="brand">Vivine's Kitchen<small>East End, Grand Cayman</small></div>
+    </div>
+    <div>
+      <div class="chalk">A true taste of the Cayman Islands</div>
+      <h1>Real Caymanian cooking, <em>served by the sea.</em></h1>
+    </div>
+    <div class="foot">
+      <span><span class="dot"></span>Turtle stew &amp; curried goat</span>
+      <span><span class="dot"></span>Fresh fish &amp; conch</span>
+      <span><span class="dot"></span>Cash only · call ahead</span>
+    </div>
+  </div>
+</body>
+</html>

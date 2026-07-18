@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://foundrylabsky.github.io/websites/vivines-kitchen-cayman/sitemap.xml

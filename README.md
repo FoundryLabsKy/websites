@@ -16,6 +16,7 @@ Each top-level directory is one client's static site, live at
 | `professional-mowing-service/` | Professional Mowing Service — lawn care, Grand Cayman | https://foundrylabsky.github.io/websites/professional-mowing-service/ |
 | `rankins-jerk-pit/` | Rankin's Jerk Pit — jerk restaurant, Bodden Town | https://foundrylabsky.github.io/websites/rankins-jerk-pit/ |
 | `rodneys-salon/` | Rodney's Salon and Barber — salon & barber, George Town | https://foundrylabsky.github.io/websites/rodneys-salon/ |
+| `vivines-kitchen-cayman/` | Vivine's Kitchen — authentic Caymanian home cooking, East End | https://foundrylabsky.github.io/websites/vivines-kitchen-cayman/ |
 
 ## Adding a site
 
