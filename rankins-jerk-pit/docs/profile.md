@@ -35,6 +35,15 @@ No prices published; site ships without them (owner to supply later).
 
 Overall: 4.2/5 on Tripadvisor.
 
+## 4a. Imagery (updated)
+
+Site photography is CC-licensed stock from Wikimedia Commons, chosen for authenticity:
+real charcoal-basket jerk, Jamaican dishes, and two genuinely local shots (the Historic
+Bodden Town sign and the ocean view from Bodden Town). Attribution appears in each
+page footer as the licenses require. These are placeholders-with-dignity: swap in the
+owner's real photos of the yard, drums, cow & pig, and plates when available, and the
+credit lines for replaced photos can be removed.
+
 ## 4. Brand identity notes & palette
 
 No existing logo; the brand is the pit itself. Palette drawn from the premises (see 3A in
