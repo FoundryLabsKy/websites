@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://foundrylabsky.github.io/websites/a1-plumbing-services/sitemap.xml

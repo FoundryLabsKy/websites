@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://foundrylabsky.github.io/websites/rankins-jerk-pit/sitemap.xml
