@@ -1,5 +1,6 @@
-:HL["/websites/foundry-labs/_next/static/chunks/11sd_rlxrwze3.css","style"]
+:HL["/websites/foundry-labs/_next/static/chunks/1pvp77xfmzqn3.css","style"]
 :HL["/websites/foundry-labs/_next/static/media/017d9bea37084d9b-s.p.41rroleoq1br7.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/websites/foundry-labs/_next/static/media/54fc36028e2bb174-s.p.20jfceqj9zyw9.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/websites/foundry-labs/_next/static/media/d2d62b05021c6286-s.p.2d9e_tvweuz-y.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/websites/foundry-labs/_next/static/media/f06bf9da926bae75-s.p.2874ccu1_u7jf.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"(marketing)","param":null,"prefetchHints":0,"slots":{"children":{"name":"contact","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"V-Tc9iU_gTGxO-wuvb7wj"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"(marketing)","param":null,"prefetchHints":0,"slots":{"children":{"name":"contact","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"eNJksm64OtxxiKycLsYm0"}
