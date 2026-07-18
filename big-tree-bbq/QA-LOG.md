@@ -34,6 +34,18 @@ live "open now" logic. Contrast ratios verified with a standalone WCAG script.
 - "Open now" logic verified against fixed America/Cayman (UTC-5) offset — on a Saturday it correctly reads **"Closed · opens tomorrow 11am."**
 - Full-page render reviewed at desktop + mobile; section rhythm, hierarchy and copy confirmed.
 
+### Loop 4 — photography pass (client request: replace graphics with photos)
+- Replaced the hero SVG scene, story tree illustration and the three dashed
+  gallery placeholders with **real photographs** (CC BY 2.0, sourced from the
+  Open Images/Flickr index over the only network route the sandbox allows);
+  added a photo header to the menu's "The Pit" category and rebuilt the OG
+  card from the hero photo.
+- Every photo: explicit `width`/`height` (no CLS), `loading="lazy"` below the
+  fold, hero `fetchpriority="high"` + `<link rel="preload">`, descriptive alt
+  text, and an on-page "representative photo" label so nothing passes as the
+  family's own. Attribution in `PHOTO-CREDITS.md` + footer link.
+- Re-ran axe (0 critical/serious) and full-page renders at 1280/390 — pass.
+
 ## BLOCKER phase scoring (must be 100%)
 
 | Phase | Result |

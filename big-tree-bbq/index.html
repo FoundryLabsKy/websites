@@ -26,6 +26,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="photos/hero-ribs.jpg" fetchpriority="high">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -197,15 +198,10 @@ header{position:sticky;top:0;z-index:100;height:var(--bar-h);
 .stars{display:inline-flex;gap:2px}
 .stars svg{width:16px;height:16px;color:var(--gold)}
 .hero-art{position:relative}
-.hero-art svg{width:100%;height:auto;filter:drop-shadow(0 24px 40px rgba(0,0,0,.35))}
-@media (max-width:900px){.hero-art{max-width:420px;margin-top:var(--s4)}}
-.ember{transform-origin:center;animation:flick 3.4s ease-in-out infinite}
-.ember2{animation-delay:.7s}.ember3{animation-delay:1.5s}
-@keyframes flick{0%,100%{opacity:.85;transform:translateY(0)}50%{opacity:1;transform:translateY(-1.5px)}}
-.smoke{animation:rise 6s ease-in-out infinite}
-.smoke2{animation-delay:2s}
-@keyframes rise{0%{opacity:.0;transform:translateY(6px)}40%{opacity:.5}100%{opacity:0;transform:translateY(-14px)}}
-@media (prefers-reduced-motion:reduce){.ember,.smoke{animation:none}}
+.hero-art img{width:100%;height:auto;border-radius:var(--r-lg);box-shadow:0 24px 48px rgba(0,0,0,.45), 0 0 0 1px rgba(247,241,230,.08)}
+.art-credit{margin-top:var(--s2);font-size:var(--fs-2xs, .72rem);font-size:.75rem;color:var(--muted-light);opacity:.75}
+.art-credit a{color:inherit;text-decoration:underline}
+@media (max-width:900px){.hero-art{max-width:460px;margin-top:var(--s4)}}
 
 /* ---------- Proof strip ---------- */
 .proof{background:var(--g700);color:var(--cream)}
@@ -238,6 +234,7 @@ section{padding-block:clamp(var(--s8),10vw,var(--s9))}
   border:1px solid rgba(126,169,139,.22);border-radius:var(--r-lg);padding:var(--s6);position:relative;overflow:hidden}
 .cat.feature::after{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;
   background:radial-gradient(circle,rgba(207,68,32,.22),transparent 70%)}
+.cat-photo{width:100%;height:auto;border-radius:var(--r-md);margin-bottom:var(--s4);box-shadow:0 8px 24px rgba(0,0,0,.4)}
 .cat h3{font-size:var(--fs-xl);color:var(--cream);display:flex;align-items:center;gap:12px}
 .cat h3 svg{width:26px;height:26px;color:var(--ember-soft);flex:none}
 .cat .cat-note{font-size:var(--fs-sm);color:var(--muted-light);margin-top:6px}
@@ -270,9 +267,9 @@ section{padding-block:clamp(var(--s8),10vw,var(--s9))}
 .story-copy p{margin-top:var(--s4);color:var(--muted)}
 .story-copy .sig{margin-top:var(--s5);font-family:var(--display);font-weight:600;color:var(--g600);font-size:var(--fs-lg)}
 .story-art{background:linear-gradient(165deg,var(--g600),var(--g800));border-radius:var(--r-lg);
-  padding:var(--s7);box-shadow:var(--e3);position:relative;overflow:hidden;color:var(--cream)}
-.story-art svg.big-tree{width:100%;max-width:340px;margin-inline:auto}
-.story-art .cap{text-align:center;margin-top:var(--s4);font-size:var(--fs-sm);color:var(--g100)}
+  padding:var(--s4);box-shadow:var(--e3);position:relative;overflow:hidden;color:var(--cream)}
+.story-art img{width:100%;height:auto;border-radius:var(--r-md)}
+.story-art .cap{text-align:center;margin-top:var(--s3);font-size:var(--fs-xs);color:var(--g100)}
 
 /* ---------- Sunday band ---------- */
 .sunday{background:linear-gradient(120deg,var(--ember-deep),var(--ember));color:#fff;text-align:center}
@@ -325,13 +322,11 @@ table.hours tr.closed td{color:var(--muted)}
 .visit-cta{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s5)}
 .note-flag{margin-top:var(--s5);font-size:var(--fs-xs);color:var(--muted);background:var(--cream);border:1px dashed var(--line);border-radius:var(--r-md);padding:var(--s3) var(--s4)}
 
-/* photo slot — honest placeholder */
+/* photo gallery */
 .photo-slots{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin-top:var(--s5)}
 @media (max-width:600px){.photo-slots{grid-template-columns:1fr 1fr}}
-.slot{aspect-ratio:4/3;border:1.5px dashed rgba(33,64,47,.28);border-radius:var(--r-md);
-  background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
-  color:var(--muted);font-size:var(--fs-xs);text-align:center;padding:var(--s3)}
-.slot svg{width:26px;height:26px;color:var(--g400)}
+.slot-photo{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-md);box-shadow:var(--e2)}
+.note-flag a{color:var(--ember-deep);text-decoration:underline}
 
 /* ---------- Footer ---------- */
 footer{background:var(--charcoal);color:var(--muted-light);padding-block:var(--s8) var(--s6)}
@@ -417,37 +412,9 @@ html.js .reveal.in{opacity:1;transform:none}
           </span>
         </div>
       </div>
-      <div class="hero-art" role="img" aria-label="Illustration of a large shade tree over a glowing barbecue pit with drifting smoke.">
-        <svg viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- smoke -->
-          <path class="smoke" d="M205 250c-8-14 6-20-2-34" stroke="rgba(247,241,230,.4)" stroke-width="4" stroke-linecap="round"/>
-          <path class="smoke smoke2" d="M235 252c8-14-6-22 2-36" stroke="rgba(247,241,230,.3)" stroke-width="4" stroke-linecap="round"/>
-          <!-- canopy -->
-          <g>
-            <circle cx="200" cy="120" r="92" fill="#285039"/>
-            <circle cx="132" cy="150" r="60" fill="#21402f"/>
-            <circle cx="268" cy="150" r="62" fill="#21402f"/>
-            <circle cx="200" cy="96" r="70" fill="#356449"/>
-            <circle cx="160" cy="120" r="46" fill="#3f7355"/>
-            <circle cx="244" cy="126" r="42" fill="#3f7355"/>
-          </g>
-          <!-- trunk -->
-          <path d="M188 190c2 30-4 52-10 78h64c-6-26-12-48-10-78l-6-8h-32l-6 8Z" fill="#6d5233"/>
-          <path d="M198 196c0 30-2 50-6 72M206 196c0 24 2 44 6 72" stroke="#553f26" stroke-width="3" stroke-linecap="round"/>
-          <!-- pit / drum -->
-          <rect x="150" y="270" width="100" height="54" rx="10" fill="#241e19"/>
-          <rect x="150" y="270" width="100" height="14" rx="7" fill="#2f2721"/>
-          <rect x="164" y="292" width="72" height="20" rx="6" fill="#0f0c0a"/>
-          <!-- embers -->
-          <circle class="ember" cx="180" cy="302" r="4.5" fill="#e8663a"/>
-          <circle class="ember ember2" cx="200" cy="304" r="5" fill="#cf4420"/>
-          <circle class="ember ember3" cx="220" cy="302" r="4.5" fill="#e8a13c"/>
-          <circle class="ember ember2" cx="210" cy="300" r="3" fill="#f7c88a"/>
-          <!-- legs -->
-          <path d="M164 324v14M236 324v14" stroke="#241e19" stroke-width="6" stroke-linecap="round"/>
-          <!-- ground -->
-          <ellipse cx="200" cy="342" rx="120" ry="10" fill="rgba(0,0,0,.25)"/>
-        </svg>
+      <div class="hero-art">
+        <img src="photos/hero-ribs.jpg" width="1400" height="1050" alt="Racks of glazed, slow-smoked ribs lined up on the grate over the pit." fetchpriority="high">
+        <p class="art-credit">Representative photo — owner photography coming. <a href="PHOTO-CREDITS.md">Credits</a></p>
       </div>
     </div>
   </section>
@@ -484,6 +451,7 @@ html.js .reveal.in{opacity:1;transform:none}
       </div>
       <div class="board">
         <div class="cat reveal">
+          <img class="cat-photo" src="photos/menu-pit-ribs.jpg" width="1000" height="562" alt="A whole rack of bark-crusted ribs smoking on the grill." loading="lazy">
           <h3>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20c2-5 5-8 8-8s6 3 8 8"/><path d="M9 12 7.5 6.5M12 12l0-6M15 12l1.5-5.5"/><path d="M6 20h12"/></svg>
             The Pit
@@ -578,20 +546,9 @@ html.js .reveal.in{opacity:1;transform:none}
         <p>There’s no dining room and no gimmicks. Just charcoal, a family that loves to feed people, and the best seats on the island: under the branches, out in the open, with the trade winds coming off the sea.</p>
         <p class="sig">— Henry &amp; Arvin Harris</p>
       </div>
-      <div class="story-art reveal" role="img" aria-label="Illustration of the big shade tree the barbecue is named for.">
-        <svg class="big-tree" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="150" cy="110" r="86" fill="#2f5c41"/>
-          <circle cx="92" cy="132" r="52" fill="#254a34"/>
-          <circle cx="208" cy="132" r="54" fill="#254a34"/>
-          <circle cx="150" cy="86" r="62" fill="#3f7355"/>
-          <circle cx="118" cy="112" r="38" fill="#4c8462"/>
-          <circle cx="188" cy="116" r="34" fill="#4c8462"/>
-          <path d="M140 178c2 34-4 60-12 92h44c-8-32-14-58-12-92l-6-10h-8l-6 10Z" fill="#7a5d3a"/>
-          <path d="M150 184c0 34-2 58-6 86" stroke="#5c4529" stroke-width="3" stroke-linecap="round"/>
-          <path d="M146 200c-10-6-18-4-26 2M154 210c10-4 18 0 24 8" stroke="#5c4529" stroke-width="3" stroke-linecap="round"/>
-          <ellipse cx="150" cy="278" rx="86" ry="9" fill="rgba(0,0,0,.22)"/>
-        </svg>
-        <p class="cap">Owner photo of the real tree &amp; pit to be supplied</p>
+      <div class="story-art reveal">
+        <img src="photos/story-pit.jpg" width="1200" height="900" alt="Chicken smoking over glowing charcoal on an open kettle grill in a back yard." loading="lazy">
+        <p class="cap">The charcoal way — representative photo; owner shots of the real tree &amp; pit to come</p>
       </div>
     </div>
   </section>
@@ -700,12 +657,12 @@ html.js .reveal.in{opacity:1;transform:none}
               Open in Google Maps
             </a>
           </div>
-          <div class="photo-slots" aria-label="Photo gallery — awaiting owner images">
-            <div class="slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m3 17 5-4 4 3 3-2 6 5"/></svg>The tree &amp; pit</div>
-            <div class="slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m3 17 5-4 4 3 3-2 6 5"/></svg>A loaded plate</div>
-            <div class="slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m3 17 5-4 4 3 3-2 6 5"/></svg>Henry &amp; Arvin</div>
+          <div class="photo-slots" aria-label="Photo gallery">
+            <img class="slot-photo" src="photos/gallery-sauced-ribs.jpg" width="800" height="600" alt="Ribs dripping with thick, glossy barbecue sauce." loading="lazy">
+            <img class="slot-photo" src="photos/gallery-chicken.jpg" width="800" height="600" alt="Grilled half chickens with crisp golden skin on a plate." loading="lazy">
+            <img class="slot-photo" src="photos/gallery-fire.jpg" width="800" height="600" alt="An open fire pit burning down to cooking coals in the yard." loading="lazy">
           </div>
-          <p class="note-flag">Address, exact hours and payment methods are shown from public listings and are pending confirmation by the owner. Real photography replaces the placeholders above at launch.</p>
+          <p class="note-flag">Address, exact hours and payment methods are shown from public listings and are pending confirmation by the owner. Photos are representative (<a href="PHOTO-CREDITS.md">credits</a>) until the family's own photography replaces them.</p>
         </div>
       </div>
     </div>
@@ -738,7 +695,7 @@ html.js .reveal.in{opacity:1;transform:none}
     </div>
     <div class="foot-bottom">
       <span>© <span id="year">2026</span> Big Tree BBQ · Gun Bay, East End, Grand Cayman</span>
-      <span>Site by <a href="../foundry-labs/" >Foundry Labs</a> · <a href="AUDIT-big-tree-bbq.md">Research</a></span>
+      <span>Site by <a href="../foundry-labs/" >Foundry Labs</a> · <a href="AUDIT-big-tree-bbq.md">Research</a> · <a href="PHOTO-CREDITS.md">Photo credits</a></span>
     </div>
   </div>
 </footer>
