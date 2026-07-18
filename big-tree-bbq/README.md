@@ -18,8 +18,10 @@ research showed none of the local comparators need one.
   no framework, no dependencies.
 - Custom design tokens (no Tailwind/shadcn defaults). Fonts: Zilla Slab + Hanken
   Grotesk via Google Fonts (preloaded, `font-display:swap`, with system fallbacks).
-- Hand-authored SVG artwork (hero tree + ember pit, favicon, OG image) — no stock
-  or AI-generated photography.
+- Real photography (`photos/`): CC BY 2.0 licensed barbecue photos with full
+  attribution in `PHOTO-CREDITS.md` — clearly labelled on-site as representative
+  stand-ins until the family's own photos arrive. No AI-generated imagery.
+  The favicon/logo mark and UI icons remain hand-authored SVG.
 - `Restaurant` JSON-LD, full OG/Twitter meta, `robots.txt`, `sitemap.xml`.
 - Accessibility verified with axe-core (0 critical/serious), keyboard-operable,
   44px targets, WCAG AA contrast.
@@ -30,7 +32,8 @@ research showed none of the local comparators need one.
 | --- | --- |
 | `index.html` | The whole site (inline CSS + design tokens) |
 | `script.js` | Live "open now" (Cayman time), mobile nav, star render, scroll reveal |
-| `favicon.svg` · `og-image.svg` / `og-image.png` | Icons & social card |
+| `favicon.svg` · `og-image.png` | Logo mark & photographic social card |
+| `photos/` · `PHOTO-CREDITS.md` | CC BY 2.0 photography + attribution |
 | `robots.txt` · `sitemap.xml` | Crawl/SEO |
 | `AUDIT-big-tree-bbq.md` | Phase A — sourced research audit |
 | `PLAN-big-tree-bbq.md` | Phase B — sitemap, copy, tokens, SEO fixes |
@@ -51,7 +54,7 @@ Everything below is shown on-site as a **clearly-labelled placeholder** or is dr
 from public listings pending confirmation. None of it is fabricated.
 
 1. **Logo / wordmark** and official brand colours (current wordmark & palette are our proposal).
-2. **Real photography** — the tree, the pit, plated food, Henry & Arvin (replaces the labelled placeholder slots and the story illustration).
+2. **Real photography** — the tree, the pit, plated food, Henry & Arvin. The site currently uses licensed CC BY 2.0 barbecue photos (credited in `PHOTO-CREDITS.md`, labelled representative on-site); the family's own shots should replace them.
 3. **Exact street address** — confirm "Austin Conolly Drive, Gun Bay" (a "503 Austin Conolly Dr" appears in aggregators) before it goes in the map pin + structured data.
 4. **Owner name spelling** — Arvin vs Arvid.
 5. **Exact founding year** (we show "since 2015" from press coverage).
