@@ -1,0 +1,11 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+.idea/
+.vscode/
+
+# Node (none committed here, but guard against stray installs)
+node_modules/
+npm-debug.log*

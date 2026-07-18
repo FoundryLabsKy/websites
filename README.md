@@ -14,6 +14,7 @@ Each top-level directory is one client's static site, live at
 | `handy-heroes-cayman/` | Handy Heroes Cayman — handyman & home repairs, Grand Cayman | https://foundrylabsky.github.io/websites/handy-heroes-cayman/ |
 | `professional-mowing-service/` | Professional Mowing Service — lawn care, Grand Cayman | https://foundrylabsky.github.io/websites/professional-mowing-service/ |
 | `rodneys-salon/` | Rodney's Salon and Barber — salon & barber, George Town | https://foundrylabsky.github.io/websites/rodneys-salon/ |
+| `vivines-kitchen-cayman/` | Vivine's Kitchen — authentic Caymanian home cooking, East End | https://foundrylabsky.github.io/websites/vivines-kitchen-cayman/ |
 
 ## Adding a site
 
